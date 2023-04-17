@@ -29,28 +29,34 @@ export class App extends Component {
 
     return Math.round(PositiveFeedbackPercentage);
   }
+
   onLeaveFeedback(name) {
+    this.setState(prevState => {
+      return {
+        [name]: prevState[name] +1
+      }
+    })
     switch (name) {
       case 'good':
-        this.setState(prevState => {
-          return {
-            good: prevState.good + 1,
-          };
-        });
+        // this.setState(prevState => {
+        //   return {
+        //     good: prevState.good + 1,
+        //   };
+        // });
         break;
       case 'neutral':
-        this.setState(prevState => {
-          return {
-            neutral: prevState.neutral + 1,
-          };
-        });
+        // this.setState(prevState => {
+        //   return {
+        //     neutral: prevState.neutral + 1,
+        //   };
+        // });
         break;
       case 'bad':
-        this.setState(prevState => {
-          return {
-            bad: prevState.bad + 1,
-          };
-        });
+        // this.setState(prevState => {
+        //   return {
+        //     bad: prevState.bad + 1,
+        //   };
+        // });
         break;
       default:
         alert('Our developer broke something');
